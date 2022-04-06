@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skiing_Amongst_Trees", "Ski
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skiing_Tests", "Skiing_Tests\Skiing_Tests.csproj", "{A0D5FA06-7709-47FB-ABEB-C3376B07D675}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skiing_Library", "Skiing_Library\Skiing_Library.csproj", "{054B2023-AFFB-44A5-9613-4972F92BA749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A0D5FA06-7709-47FB-ABEB-C3376B07D675}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0D5FA06-7709-47FB-ABEB-C3376B07D675}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0D5FA06-7709-47FB-ABEB-C3376B07D675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054B2023-AFFB-44A5-9613-4972F92BA749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054B2023-AFFB-44A5-9613-4972F92BA749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054B2023-AFFB-44A5-9613-4972F92BA749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054B2023-AFFB-44A5-9613-4972F92BA749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
