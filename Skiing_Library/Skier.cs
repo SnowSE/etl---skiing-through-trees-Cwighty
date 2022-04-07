@@ -2,14 +2,15 @@
 {
     public class Skier
     {
-        private int v1;
-        private int v2;
         private int slope;
+        private int maxWidth;
 
-        public Skier(int v1, int v2)
+        public Skier(int xPos, int yPos)
         {
-            this.v1 = v1;
-            this.v2 = v2;
+            this.XPosition = xPos;
+            this.YPosition = yPos;
+            this.slope = 0;
+            this.maxWidth = 31;
         }
 
         public int XPosition { get; set; }
@@ -17,22 +18,24 @@
 
         public void Move()
         {
-            throw new NotImplementedException();
+            YPosition++;
+            XPosition = (XPosition + slope) % maxWidth;
         }
 
-        public void SetSlope(int slope)
+        public void SetSlope(int slope, int maxWidth)
         {
-            throw new NotImplementedException();
+            this.slope = slope;
+            this.maxWidth = maxWidth;
         }
 
         public int GetXPosition()
         {
-            throw new NotImplementedException();
+            return this.XPosition;
         }
 
         public int GetYPosition()
         {
-            throw new NotImplementedException();
+            return this.YPosition;
         }
     }
 }
