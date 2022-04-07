@@ -3,14 +3,17 @@
     public class SkiSlope
     {
         private bool[,] treeBitMap;
-        public int treeHitCounter { get; }
+        public int TreeHitCounter { get; }
+        public int Height { get; }
+        public int Width { get; }
 
         public SkiSlope(bool[,] treeBitMap)
         {
             this.treeBitMap = treeBitMap;
-        }
+            this.Height = treeBitMap.GetLength(0);
+            this.Width = treeBitMap.GetLength(1);
 
-        public object TreeCount { get; set; }
+        }
 
         public int CountTrees()
         {
@@ -30,7 +33,7 @@
 
         public bool CheckCollision(int xPos, int yPos)
         {
-            return false;
+            return true;
         }
     }
 }
