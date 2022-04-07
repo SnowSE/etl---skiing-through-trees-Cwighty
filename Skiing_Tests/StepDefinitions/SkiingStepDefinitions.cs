@@ -42,14 +42,6 @@ namespace Skiing_Tests.StepDefinitions
             context.Add("lineLength", lineLength);
         }
 
-        [When(@"skier moves to (.*),(.*)")]
-        public void WhenSkierMovesTo(int xPos, int yPos)
-        {
-            var skier = new Skier(xPos - 1,yPos - 1);
-            skier.Move();
-            context.Add("skier", skier);
-        }
-
         [Then(@"the skiers next location is (.*),(.*)")]
         public void ThenTheSkiersNextLocationIs(int xPos, int yPos)
         {
@@ -68,7 +60,8 @@ namespace Skiing_Tests.StepDefinitions
         [When(@"skiing a slope of (.*)")]
         public void WhenSkiingASlopeOf(int slope)
         {
-            context.Get<Skier>("skier").SetSlope(slope);
+            context.Get<Skier>("skier").SetSlope(slope,context.Get<int>("lineLength"));
+            context.Get<Skier>("skier").Move();
         }
 
 
