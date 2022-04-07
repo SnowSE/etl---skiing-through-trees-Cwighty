@@ -2,19 +2,30 @@
 {
     public class SkiSlope
     {
-        private bool[,] vs;
+        private bool[,] treeBitMap;
         public int treeHitCounter { get; }
 
-        public SkiSlope(bool[,] vs)
+        public SkiSlope(bool[,] treeBitMap)
         {
-            this.vs = vs;
+            this.treeBitMap = treeBitMap;
         }
 
         public object TreeCount { get; set; }
 
-        public object CountTrees()
+        public int CountTrees()
         {
-            throw new NotImplementedException();
+            int totalTreeCount = 0;
+            for(var row = 0; row < treeBitMap.GetLength(0); row++)
+            {
+                for(var col = 0; col < treeBitMap.GetLength(1); col++)
+                {
+                    if(treeBitMap[row,col])
+                    {
+                        totalTreeCount++;
+                    }
+                }
+            }
+            return totalTreeCount;
         }
 
         public bool CheckCollision(int xPos, int yPos)

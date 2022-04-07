@@ -17,7 +17,7 @@ namespace Skiing_Tests.StepDefinitions
         [Given(@"a tree input file")]
         public void GivenATreeInputFile()
         {
-            string[] lines = TreeParser.ReadFile(Environment.CurrentDirectory + "../../../TreeMap.txt");
+            string[] lines = TreeParser.ReadFile(Environment.CurrentDirectory + "/../../../TreeMap.txt");
             context.Add("fileLines", lines);
         }
 
