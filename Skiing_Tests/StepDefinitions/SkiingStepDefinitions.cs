@@ -69,16 +69,31 @@ namespace Skiing_Tests.StepDefinitions
         public void GivenATreeLocationOf(int xPos, int yPos)
         {
             context.Add("treePosition", (xPos, yPos));
+            var treeMap = new bool[10, 10];
+            treeMap[yPos,xPos] = true;
+            context.Add("skiSlope", new SkiSlope(treeMap));
         }
 
         [Then(@"the tree hit is counted")]
         public void ThenTheTreeHitIsCounted()
         {
-            var skiSlope = new SkiSlope(new bool[,] { { false, false }, { false, true } });
+            var skiSlope = context.Get<SkiSlope>("skiSlope");
             var skier = context.Get<Skier>("skier");
             var xPos = skier.GetXPosition();
             var yPos = skier.GetYPosition();
             skiSlope.CheckCollision(xPos,yPos).Should().BeTrue();
         }
+
+        [Then(@"the tree hit is not counted")]
+        public void ThenTheTreeHitIsNotCounted()
+        {
+
+            var skiSlope = context.Get<SkiSlope>("skiSlope");
+            var skier = context.Get<Skier>("skier");
+            var xPos = skier.GetXPosition();
+            var yPos = skier.GetYPosition();
+            skiSlope.CheckCollision(xPos, yPos).Should().BeFalse();
+        }
+
     }
 }
