@@ -5,12 +5,12 @@
         private int slope;
         private int maxWidth;
 
-        public Skier(int xPos, int yPos)
+        public Skier(int slope, int slopeMaxWidth)
         {
-            this.XPosition = xPos;
-            this.YPosition = yPos;
-            this.slope = 0;
-            this.maxWidth = 31;
+            this.XPosition = 0;
+            this.YPosition = 0;
+            this.slope = slope;
+            this.maxWidth = slopeMaxWidth;
         }
 
         public int XPosition { get; set; }
@@ -22,12 +22,6 @@
             XPosition = (XPosition + slope) % maxWidth;
         }
 
-        public void SetSlope(int slope, int maxWidth)
-        {
-            this.slope = slope;
-            this.maxWidth = maxWidth;
-        }
-
         public int GetXPosition()
         {
             return this.XPosition;
@@ -37,5 +31,11 @@
         {
             return this.YPosition;
         }
+
+        public int GetSlope()
+        {
+            return this.slope;
+        }
+
     }
 }
