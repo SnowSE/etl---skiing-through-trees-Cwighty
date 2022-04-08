@@ -12,7 +12,6 @@
             this.treeBitMap = treeBitMap;
             this.Height = treeBitMap.GetLength(0);
             this.Width = treeBitMap.GetLength(1);
-
         }
 
         public int CountTrees()
@@ -33,7 +32,11 @@
 
         public bool CheckCollision(int xPos, int yPos)
         {
-            return true;
+            if (treeBitMap[yPos, xPos])
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
