@@ -33,7 +33,14 @@
 
         public bool CheckCollision(int xPos, int yPos)
         {
-            return true;
+           if(treeBitMap[xPos,yPos])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
