@@ -16,13 +16,15 @@ namespace Skiing_Amongst_Trees
             {
                 Console.Write(fileLines[i]);
                 Console.SetCursorPosition(skier.XPosition, Console.CursorTop);
-                Console.Write("O");
+                Console.Write("\\");
                 if (skiSlope.CheckCollision(skier.XPosition, skier.YPosition))
                 {
                     Console.SetCursorPosition(skier.XPosition, Console.CursorTop);
                     Console.Write("=");
                     treesHit++;
                 }
+                skier.Move();
+                Console.WriteLine();
             }
             Console.WriteLine("Trees Hit: " + treesHit);
         }

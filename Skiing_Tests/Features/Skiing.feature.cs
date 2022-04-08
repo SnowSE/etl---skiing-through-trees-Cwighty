@@ -300,9 +300,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Skier hits a tree with a non-symetric location")]
+        [NUnit.Framework.CategoryAttribute("Collision")]
         public virtual void SkierHitsATreeWithANon_SymetricLocation()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Collision"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Skier hits a tree with a non-symetric location", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 40
@@ -346,9 +348,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Skier does not hit a tree")]
+        [NUnit.Framework.CategoryAttribute("Collision")]
         public virtual void SkierDoesNotHitATree()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Collision"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Skier does not hit a tree", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 47
