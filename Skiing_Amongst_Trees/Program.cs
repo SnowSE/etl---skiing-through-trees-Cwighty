@@ -23,8 +23,6 @@ namespace Skiing_Amongst_Trees
                     Console.Write("=");
                     treesHit++;
                 }
-                Console.WriteLine();
-                skier.Move();
             }
             Console.WriteLine("Trees Hit: " + treesHit);
         }
