@@ -8,7 +8,10 @@ namespace Skiing_Amongst_Trees
         static SkiSlope skiSlope = new SkiSlope(Environment.CurrentDirectory + "/../../../TreeMap.txt");
         static void Main(string[] args)
         {
-            Console.WriteLine(skiSlope.CountTreesHitForSlope(3));
+            int bestSlope = skiSlope.CalculateBestSlope();
+            skiSlope.DisplaySkierPathForSlope(bestSlope);
+            Console.WriteLine("\nBest Slope is: " + bestSlope);
+            Console.WriteLine("Trees hit: " + skiSlope.CountTreesHitForSlope(bestSlope));
         }
     }
 }
