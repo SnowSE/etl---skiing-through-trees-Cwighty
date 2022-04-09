@@ -3,14 +3,16 @@
     public class SkiSlope
     {
         private bool[,] treeBitMap;
+
+        private string[] skiSlopeFileLines;
         public int TreeHitCounter { get; }
         public int Height { get; }
         public int Width { get; }
 
         public SkiSlope(string treeMapPath)
         {
-            var fileLines = TreeParser.ReadFile(treeMapPath);
-            this.treeBitMap = TreeParser.Parse(fileLines);
+            skiSlopeFileLines = TreeParser.ReadFile(treeMapPath);
+            this.treeBitMap = TreeParser.Parse(skiSlopeFileLines);
 
             this.Height = treeBitMap.GetLength(0);
             this.Width = treeBitMap.GetLength(1);
@@ -67,6 +69,32 @@
             }
             var slopesOrdered = slopeTreeHitCounts.OrderBy(slope => slope.Value);
             return slopesOrdered.First().Key;
+        }
+
+        public void DisplaySkiSlope()
+        {
+            foreach(var line in skiSlopeFileLines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+        public void DisplaySkierPathForSlope(int slope)
+        {
+            var skier = new Skier(slope, this.Width);
+            for (int i = 0; i < this.Height; i++)
+            {
+                Console.Write(skiSlopeFileLines[i]);
+                Console.SetCursorPosition(skier.XPosition, Console.CursorTop);
+                Console.Write('O');
+                if (CheckCollision(skier.XPosition, skier.YPosition))
+                {
+                    Console.SetCursorPosition(skier.XPosition, Console.CursorTop);
+                    Console.Write('=');
+                }
+                Console.WriteLine();
+                skier.Move();
+            }
         }
 
         internal static class TreeParser
